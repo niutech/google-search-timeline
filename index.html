@@ -60,9 +60,14 @@
     }
     .amp-carousel-button {
         position: fixed;
+        cursor: pointer;
     }
     .slide iframe {
         margin-left: -132px;
+    }
+    #results {
+        position: absolute;
+        top: 140px;
     }
     #trends {
         position: fixed;
@@ -87,6 +92,18 @@
     #trends amp-iframe {
         outline: 1px solid #e0e0e0;
         background-color: #fff;
+    }
+
+    @media (max-width: 669px) {
+        .slide amp-iframe {
+            max-width: 100%;
+        }
+        .slide iframe {
+            margin-left: 0;
+        }
+        #results {
+            top: 220px;
+        }
     }
     </style>
 </head>
@@ -152,19 +169,19 @@
 </amp-state>
 <div class="header">
     <h1>Google Search Timeline</h1>
-    <input type="search" title="Search query" value="" placeholder="Search..." on="change:AMP.setState({google: {query: event.value}})" autofocus>
-    <select title="Type" on="change:AMP.setState({google: {type: event.value}})">
+    <input type="search" title="Search query" value="" placeholder="Search..." on="change:AMP.setState({google: {query: event.value}}),results.scrollTo(duration=100)" autofocus>
+    <select title="Type" on="change:AMP.setState({google: {type: event.value}}),results.scrollTo(duration=100)">
         <option value="">All</option>
         <option value="isch">Images</option>
         <option value="vid">Videos</option>
         <option value="nws">News</option>
     </select>
-    <select title="Period" on="change:AMP.setState({google: {period: event.value}})">
+    <select title="Period" on="change:AMP.setState({google: {period: event.value}}),results.scrollTo(duration=100)">
         <option value="year">Yearly</option>
         <option value="quarter">Quarterly</option>
         <option value="month">Monthly</option>
     </select>
-    <select title="Sort" on="change:AMP.setState({google: {sort: event.value}})">
+    <select title="Sort" on="change:AMP.setState({google: {sort: event.value}}),results.scrollTo(duration=100)">
         <option value="0">By relevance</option>
         <option value="1">By date</option>
     </select>
@@ -172,7 +189,7 @@
         valid <a href="https://www.ampproject.org/" target="_blank">AMP</a><br>
         made by <a href="https://niute.ch/" target="_blank">niu tech</a><br>
         hosted on <a href="https://github.com/niutech/google-search-timeline/" target="_blank">GitHub</a><br>
-        not affiliated with Google
+        not affiliated with <a href="https://www.google.com/" target="_blank">Google</a>
     </div>
 </div>
 <amp-carousel type="carousel" height="2600" layout="fixed-height" [hidden]="!google.query" hidden>
@@ -249,6 +266,7 @@
         </amp-iframe>
     </div>
 </amp-carousel>
+<div id="results"></div>
 <div id="trends" [hidden]="!google.query" hidden>
     <div class="toggle" role="button" tabindex="0" on="tap:trends.toggleClass(class='shown')">📉</div>
     <amp-iframe src="https://www.google.com/gen_204" [src]="'https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22' + google.query + '%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22all%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22' + google.trends[google.type] + '%22%7D&tz=-60'" height="420" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
