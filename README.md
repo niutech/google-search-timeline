@@ -1,2 +1,3 @@
-# google-search-timeline
-Google Search Timeline in AMP HTML
+# Google Search Timeline
+
+Made in [AMP](https://ampproject.org).
