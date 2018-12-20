@@ -132,7 +132,7 @@
     </script>
 </amp-state>
 <div class="header">
-	<h1>Google Search Timeline</h1>
+    <h1>Google Search Timeline</h1>
     <input type="search" title="Search query" value="" placeholder="Search..." on="change:AMP.setState({google: {query: event.value}})" autofocus>
     <select title="Type" on="change:AMP.setState({google: {type: event.value}})">
         <option value="">All</option>
@@ -149,7 +149,7 @@
         <option value="0">By relevance</option>
         <option value="1">By date</option>
     </select>
-	<div class="credits">made in <a href="https://www.ampproject.org/" target="_blank">AMP</a> by <a href="https://niute.ch/" target="_blank">niu tech</a></div>
+	<div class="credits">made in <a href="https://www.ampproject.org/" target="_blank">AMP</a> by <a href="https://niute.ch/" target="_blank">niu tech</a> hosted on <a href="https://github.com/niutech/google-search-timeline/" target="_blank">GitHub</a></div>
 </div>
 <amp-carousel type="carousel" height="2600" layout="fixed-height" [hidden]="!google.query" hidden>
     <div class="slide">
@@ -190,7 +190,7 @@
     </div>
 </amp-carousel>
 <div id="trends" [hidden]="!google.query" hidden>
-    <div class="toggle" role="button" tabindex="0" on="tap:trends.toggleClass(class='shown')">đź“‰</div>
+    <div class="toggle" role="button" tabindex="0" on="tap:trends.toggleClass(class='shown')">📉</div>
     <amp-iframe src="https://www.google.com/gen_204" [src]="'https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22' + google.query + '%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22' + google.trends[google.type] + '%22%7D&tz=-60'" height="420" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
         <div placeholder></div>
     </amp-iframe>
