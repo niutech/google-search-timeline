@@ -10,100 +10,107 @@
     <link rel="canonical" href="https://niutech.github.io/google-search-timeline/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-	<style amp-custom>
-	body {
-		font: 14px Arial, sans-serif;
-		color: #555;
-		text-align: center;
-	}
-	h1 {
-		margin: 0 0 10px;
-		font-size: 18px;
-	}
-	h2 {
-		margin: 0;
-		font-size: 14px;
-	}
-	a {
-		text-decoration: none;
-	}
-	input, select {
-		margin-bottom: 10px;
-		height: 32px;
-		padding: 4px 10px;
-		border: 1px solid #e0e0e0;
-		border-radius: 16px;
-	}
-	input:focus, select:focus {
-		border: 1px solid #458bff;
-		outline: 0;
-	}
-	.header {
-		position: -webkit-sticky;
-		position: sticky;
-		top: 0;
-		z-index: 1;
-		padding: 10px 0;
-		background-color: #fff;
-	}
-	.credits {
-		position: absolute;
-		top: 2px;
-		right: 4px;
-		font-size: 10px;
-	}
-	.slide {
-	    width: 670px;
-		max-width: 100%;
-		margin-left: 0;
-	}
-	.amp-carousel-button {
-		position: fixed;
-	}
-	.slide iframe {
-		margin-left: -132px;
-	}
-	#trends {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		transform: translateY(420px);
-		transition: 0.5s;
-	}
-	#trends.shown {
-		transform: translateY(0);
-	}
-	#trends .toggle {
-		display: inline-block;
-		padding: 8px;
-		margin: 0 auto 16px;
-		background-color: rgba(0, 0, 0, 0.5);
-		border-radius: 2px;
-		outline: none;
-		cursor: pointer;
-	}
-	#trends amp-iframe {
-		outline: 1px solid #e0e0e0;
-		background-color: #fff;
-	}
-	</style>
+    <style amp-custom>
+    body {
+        font: 14px Arial, sans-serif;
+        color: #555;
+        text-align: center;
+    }
+    h1 {
+        margin: 0 0 10px;
+        font-size: 18px;
+    }
+    h2 {
+        margin: 0;
+        font-size: 14px;
+    }
+    a {
+        text-decoration: none;
+    }
+    input, select {
+        margin-bottom: 10px;
+        height: 32px;
+        padding: 4px 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px;
+    }
+    input:focus, select:focus {
+        border: 1px solid #458bff;
+        outline: 0;
+    }
+    .header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding: 10px 0;
+        background-color: #fff;
+    }
+    .credits {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        font-size: 8px;
+        text-align: right;
+    }
+    .slide {
+        width: 670px;
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .amp-carousel-button {
+        position: fixed;
+    }
+    .slide iframe {
+        margin-left: -132px;
+    }
+    #trends {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(420px);
+        transition: 0.5s;
+    }
+    #trends.shown {
+        transform: translateY(0);
+    }
+    #trends .toggle {
+        display: inline-block;
+        padding: 8px;
+        margin: 0 auto 16px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+    }
+    #trends amp-iframe {
+        outline: 1px solid #e0e0e0;
+        background-color: #fff;
+    }
+    </style>
 </head>
 <body>
 <amp-state id="google">
     <script type="application/json">
         {
             "query": "",
-			"type": "",
+            "type": "",
             "period": "year",
-			"sort": "0",
+            "sort": "0",
             "month": [
                 "cdr%3A1%2Ccd_min%3A12%2F1%2F2018%2Ccd_max%3A12%2F31%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A11%2F1%2F2018%2Ccd_max%3A11%2F30%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A10%2F1%2F2018%2Ccd_max%3A10%2F31%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A9%2F1%2F2018%2Ccd_max%3A9%2F30%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A8%2F1%2F2018%2Ccd_max%3A8%2F31%2F2018%2Csbd%3A",
-                "cdr%3A1%2Ccd_min%3A7%2F1%2F2018%2Ccd_max%3A7%2F31%2F2018%2Csbd%3A"
+                "cdr%3A1%2Ccd_min%3A7%2F1%2F2018%2Ccd_max%3A7%2F31%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A6%2F1%2F2018%2Ccd_max%3A6%2F30%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A5%2F1%2F2018%2Ccd_max%3A5%2F31%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A4%2F1%2F2018%2Ccd_max%3A4%2F30%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A3%2F1%2F2018%2Ccd_max%3A3%2F31%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A2%2F1%2F2018%2Ccd_max%3A2%2F28%2F2018%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2018%2Ccd_max%3A1%2F31%2F2018%2Csbd%3A"
             ],
             "quarter": [
                 "cdr%3A1%2Ccd_min%3A10%2F1%2F2018%2Ccd_max%3A12%2F31%2F2018%2Csbd%3A",
@@ -111,7 +118,13 @@
                 "cdr%3A1%2Ccd_min%3A4%2F1%2F2018%2Ccd_max%3A6%2F30%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A1%2F1%2F2018%2Ccd_max%3A3%2F31%2F2018%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A10%2F1%2F2017%2Ccd_max%3A12%2F31%2F2017%2Csbd%3A",
-                "cdr%3A1%2Ccd_min%3A7%2F1%2F2017%2Ccd_max%3A9%2F30%2F2017%2Csbd%3A"
+                "cdr%3A1%2Ccd_min%3A7%2F1%2F2017%2Ccd_max%3A9%2F30%2F2017%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A4%2F1%2F2017%2Ccd_max%3A6%2F30%2F2017%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2017%2Ccd_max%3A3%2F31%2F2017%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A10%2F1%2F2016%2Ccd_max%3A12%2F31%2F2016%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A7%2F1%2F2016%2Ccd_max%3A9%2F30%2F2016%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A4%2F1%2F2016%2Ccd_max%3A6%2F30%2F2016%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2016%2Ccd_max%3A3%2F31%2F2016%2Csbd%3A"
             ],
             "year": [
                 "cdr%3A1%2Ccd_min%3A1%2F1%2F2018%2Ccd_max%3A12%2F31%2F2018%2Csbd%3A",
@@ -119,14 +132,20 @@
                 "cdr%3A1%2Ccd_min%3A1%2F1%2F2016%2Ccd_max%3A12%2F31%2F2016%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A1%2F1%2F2015%2Ccd_max%3A12%2F31%2F2015%2Csbd%3A",
                 "cdr%3A1%2Ccd_min%3A1%2F1%2F2014%2Ccd_max%3A12%2F31%2F2014%2Csbd%3A",
-                "cdr%3A1%2Ccd_min%3A1%2F1%2F2013%2Ccd_max%3A12%2F31%2F2013%2Csbd%3A"
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2013%2Ccd_max%3A12%2F31%2F2013%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2012%2Ccd_max%3A12%2F31%2F2012%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2011%2Ccd_max%3A12%2F31%2F2011%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2010%2Ccd_max%3A12%2F31%2F2010%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2009%2Ccd_max%3A12%2F31%2F2009%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2008%2Ccd_max%3A12%2F31%2F2008%2Csbd%3A",
+                "cdr%3A1%2Ccd_min%3A1%2F1%2F2007%2Ccd_max%3A12%2F31%2F2007%2Csbd%3A"
             ],
-			"showTrends": false,
+            "showTrends": false,
             "trends": {
                 "": "",
                 "isch": "images",
                 "vid": "youtube",
-            	"nws": "news"
+                "nws": "news"
             }
         }
     </script>
@@ -149,7 +168,12 @@
         <option value="0">By relevance</option>
         <option value="1">By date</option>
     </select>
-	<div class="credits">made in <a href="https://www.ampproject.org/" target="_blank">AMP</a> by <a href="https://niute.ch/" target="_blank">niu tech</a> hosted on <a href="https://github.com/niutech/google-search-timeline/" target="_blank">GitHub</a></div>
+    <div class="credits">
+        valid <a href="https://www.ampproject.org/" target="_blank">AMP</a><br>
+        made by <a href="https://niute.ch/" target="_blank">niu tech</a><br>
+        hosted on <a href="https://github.com/niutech/google-search-timeline/" target="_blank">GitHub</a><br>
+        not affiliated with Google
+    </div>
 </div>
 <amp-carousel type="carousel" height="2600" layout="fixed-height" [hidden]="!google.query" hidden>
     <div class="slide">
@@ -188,10 +212,46 @@
             <div placeholder></div>
         </amp-iframe>
     </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Sixth to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][6] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Seventh to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][7] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Eighth to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][8] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Ninth to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][9] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Tenth to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][10] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
+    <div class="slide">
+        <h2 class="title" [text]="'Eleventh to last ' + google.period"></h2>
+        <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][11] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
+            <div placeholder></div>
+        </amp-iframe>
+    </div>
 </amp-carousel>
 <div id="trends" [hidden]="!google.query" hidden>
     <div class="toggle" role="button" tabindex="0" on="tap:trends.toggleClass(class='shown')">📉</div>
-    <amp-iframe src="https://www.google.com/gen_204" [src]="'https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22' + google.query + '%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22today%205-y%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22' + google.trends[google.type] + '%22%7D&tz=-60'" height="420" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+    <amp-iframe src="https://www.google.com/gen_204" [src]="'https://trends.google.com/trends/embed/explore/TIMESERIES?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22' + google.query + '%22%2C%22geo%22%3A%22%22%2C%22time%22%3A%22all%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22' + google.trends[google.type] + '%22%7D&tz=-60'" height="420" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
         <div placeholder></div>
     </amp-iframe>
 </div>
