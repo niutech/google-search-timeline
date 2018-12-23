@@ -93,17 +93,15 @@
         outline: 1px solid #e0e0e0;
         background-color: #fff;
     }
-
-    @media (max-width: 669px) {
-        .slide amp-iframe {
-            max-width: 100%;
-        }
-        .slide iframe {
-            margin-left: 0;
-        }
-        #results {
-            top: 220px;
-        }
+    /* Mobile styles */
+    .amp-mode-touch .slide amp-iframe {
+        max-width: 100%;
+    }
+    .amp-mode-touch .slide iframe {
+        margin-left: 0;
+    }
+    .amp-mode-touch #results {
+        top: 220px;
     }
     </style>
 </head>
