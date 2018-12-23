@@ -2,6 +2,7 @@
 <html amp>
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="The AMP HTML single-page app showing Google Web/Images/Video/News Search results as a timeline, grouped by year/quarter/month, sorted by date/relevance, with Google Trends graph at the bottom.">
     <title>Google Search Timeline</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -61,6 +62,9 @@
     .amp-carousel-button {
         position: fixed;
         cursor: pointer;
+    }
+    .slide amp-iframe {
+        max-width: calc(100% + 132px);
     }
     .slide iframe {
         margin-left: -132px;
@@ -190,7 +194,7 @@
         not affiliated with <a href="https://www.google.com/" target="_blank">Google</a>
     </div>
 </div>
-<amp-carousel type="carousel" height="2600" layout="fixed-height" [hidden]="!google.query" hidden>
+<amp-carousel type="carousel" height="2600" layout="fixed-height" [hidden]="!google.query" hidden controls>
     <div class="slide">
         <h2 class="title" [text]="'This ' + google.period"></h2>
         <amp-iframe src="https://www.google.com/gen_204" [src]="'https://www.google.com/search?igu=1&newwindow=1&q=' + google.query + '&tbm=' + google.type + '&tbs=' + google[google.period][0] + google.sort" width="800" height="3000" scrolling="no" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox">
